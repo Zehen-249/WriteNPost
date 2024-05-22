@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="main container h-[100%] w-[100%] grid grid-flow-row md:grid-cols-3 justify-center justify-items-center p-[20px] gap-3">
+                  
+        {% for post, author in posts_with_users %}
+            <div class="card w-[90%] bg-[#f7e7a1] rounded-[20px] p-[10px] " >
+                <h1 class="m-[10px]">{{ post.poemName }}</h1>
+                <hr>
+                <p class="m-[10px]">{{ post.content }}</p>
+                <hr>
+                <caption class="m-[10px]">{{ author.username }}</caption>   
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

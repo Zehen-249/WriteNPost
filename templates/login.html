@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card w-[100%] h-[100%] p-[20px] flex justify-center items-center">
+    <div id="loginForm" class=" border-4 border-[#f3e08c] rounded-[10px] bg-[#ffea71] md:px-[15%] ">
+        <form action="" method="post" >
+            {% csrf_token %}
+
+            {% if messages %}
+            {% for message in messages %}
+                <h2 style="padding:4px; color:red;">{{message}}</h2>
+            {% endfor %}
+            {% endif %}
+            <div class="flex flex-col gap-3 p-[30px] justify-center items-center">
+                <input type="text" placeholder="Enter User Name" name="username" class="border-2 border-[#686464] p-[10px] rounded-[15px] pl-[20px] placeholder:text-[#222]" >
+                <input type="password" placeholder="Enter Password" name="password" class="border-2 border-[#686464]  p-[10px] rounded-[15px] pl-[20px] placeholder:text-[#222]" >
+                <button type="submit" class="p-[10px] text-white bg-[#53aa3d] w-[100px] rounded-[20px] text-blue-700">Log In</button>
+                <p>Don't Have an Account? <a href="registration">Goto registration</a>
+            </div>
+        </form>
+        
+    </div>
+
+</div>
+{% endblock content %}
+
